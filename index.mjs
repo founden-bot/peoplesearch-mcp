@@ -133,7 +133,7 @@ async function handle(msg) {
       return ok(id, {
         protocolVersion: version,
         capabilities: { tools: { listChanged: false } },
-        serverInfo: { name: "peoplesearch.im", title: "PeopleSearch.im", version: "1.2.0" },
+        serverInfo: { name: "peoplesearch.im", title: "PeopleSearch.im", version: "1.3.0" },
         instructions: "PeopleSearch.im people-data tools. Searching is free; reveals and lookups cost credits (most 1, refunded when nothing is found). Set PEOPLESEARCH_API_KEY from https://peoplesearch.im/developers.",
       });
     }
