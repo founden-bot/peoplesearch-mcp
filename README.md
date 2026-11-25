@@ -1,3 +1,5 @@
+<img src="assets/logo-400.png" alt="PeopleSearch.im" width="80" height="80">
+
 # PeopleSearch.im MCP server
 
 Give your AI agent [PeopleSearch.im](https://peoplesearch.im/mcp?utm_source=github&utm_medium=readme&utm_campaign=mcp-repo):
@@ -79,7 +81,8 @@ claude mcp add --transport http peoplesearch https://peoplesearch.im/api/mcp \
 
 ## Connect (local stdio bridge)
 
-For clients that only speak stdio, this repository is a zero-dependency bridge (`index.mjs`, Node 18+). It
+For clients that only speak stdio, this repository is a zero-dependency bridge (`index.mjs`, Node 18+, on npm as
+[`peoplesearch-mcp`](https://www.npmjs.com/package/peoplesearch-mcp)). It
 speaks MCP over stdio and forwards each tool call to the PeopleSearch.im REST API with your API key:
 
 ```json
@@ -87,12 +90,14 @@ speaks MCP over stdio and forwards each tool call to the PeopleSearch.im REST AP
   "mcpServers": {
     "peoplesearch": {
       "command": "npx",
-      "args": ["-y", "github:founden-bot/peoplesearch-mcp"],
+      "args": ["-y", "peoplesearch-mcp"],
       "env": { "PEOPLESEARCH_API_KEY": "sk_sift_..." }
     }
   }
 }
 ```
+
+Agents setting this up for a user (Cline and the like): see [llms-install.md](llms-install.md).
 
 Or clone the repository and run `node index.mjs` with `PEOPLESEARCH_API_KEY` set.
 `PEOPLESEARCH_BASE_URL` optionally overrides the API base (default `https://peoplesearch.im`).
